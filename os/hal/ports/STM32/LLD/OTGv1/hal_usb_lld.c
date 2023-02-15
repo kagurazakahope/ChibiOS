@@ -40,8 +40,7 @@
 
 #if STM32_OTG_STEPPING == 1
 #if defined(BOARD_OTG_NOVBUSSENS)
-#define GCCFG_INIT_VALUE        (GCCFG_NOVBUSSENS | GCCFG_VBUSASEN |        \
-                                 GCCFG_VBUSBSEN | GCCFG_PWRDWN)
+#define GCCFG_INIT_VALUE        (GCCFG_NOVBUSSENS | GCCFG_PWRDWN)
 #else
 #define GCCFG_INIT_VALUE        (GCCFG_VBUSASEN | GCCFG_VBUSBSEN |          \
                                  GCCFG_PWRDWN)
@@ -49,7 +48,7 @@
 
 #elif STM32_OTG_STEPPING == 2
 #if defined(BOARD_OTG_NOVBUSSENS)
-#define GCCFG_INIT_VALUE        GCCFG_PWRDWN
+#define GCCFG_INIT_VALUE        GCCFG_NOVBUSSENS | GCCFG_PWRDWN
 #else
 #define GCCFG_INIT_VALUE        (GCCFG_VBDEN | GCCFG_PWRDWN)
 #endif
